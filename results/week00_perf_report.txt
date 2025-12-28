@@ -1,0 +1,1090 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'task-clock:ppp'
+# Event count (approx.): 1278000000
+#
+# Children      Self  Command      Shared Object         Symbol                                       
+# ........  ........  ...........  ....................  .............................................
+#
+    99.88%     0.00%  lab00_clean  libc.so.6             [.] clone3
+            |
+            ---clone3
+               start_thread
+               |          
+                --99.84%--0x72b850cecdb3
+                          increase_global_value()
+                          |          
+                          |--48.98%--___pthread_mutex_unlock (inlined)
+                          |          |          
+                          |           --48.04%--__GI___pthread_mutex_unlock_usercnt (inlined)
+                          |                     |          
+                          |                      --46.03%--lll_mutex_unlock_optimized (inlined)
+                          |                                |          
+                          |                                 --28.76%--__GI___lll_lock_wake
+                          |                                           |          
+                          |                                            --14.46%--entry_SYSCALL_64_after_hwframe
+                          |                                                      |          
+                          |                                                       --14.44%--do_syscall_64
+                          |                                                                 |          
+                          |                                                                  --8.88%--x64_sys_call
+                          |                                                                            |          
+                          |                                                                             --8.86%--__x64_sys_futex
+                          |                                                                                       |          
+                          |                                                                                        --8.63%--do_futex
+                          |                                                                                                  |          
+                          |                                                                                                  |--6.69%--futex_wake
+                          |                                                                                                  |          |          
+                          |                                                                                                  |           --3.09%--_raw_spin_lock
+                          |                                                                                                  |                     |          
+                          |                                                                                                  |                      --3.07%--__pv_queued_spin_lock_slowpath
+                          |                                                                                                  |          
+                          |                                                                                                   --1.56%--_raw_spin_lock
+                          |          
+                          |--47.36%--___pthread_mutex_lock (inlined)
+                          |          |          
+                          |           --39.59%--lll_mutex_lock_optimized (inlined)
+                          |                     |          
+                          |                      --21.56%--__GI___lll_lock_wait
+                          |                                |          
+                          |                                 --19.29%--futex_wait (inlined)
+                          |                                           |          
+                          |                                            --10.94%--entry_SYSCALL_64_after_hwframe
+                          |                                                      do_syscall_64
+                          |                                                      |          
+                          |                                                       --7.92%--x64_sys_call
+                          |                                                                 |          
+                          |                                                                  --7.73%--__x64_sys_futex
+                          |                                                                            |          
+                          |                                                                             --7.63%--do_futex
+                          |                                                                                       |          
+                          |                                                                                        --7.53%--futex_wait
+                          |                                                                                                  |          
+                          |                                                                                                   --7.30%--__futex_wait
+                          |                                                                                                             |          
+                          |                                                                                                              --6.65%--futex_wait_setup
+                          |                                                                                                                        |          
+                          |                                                                                                                        |--2.29%--futex_q_unlock
+                          |                                                                                                                        |          |          
+                          |                                                                                                                        |           --1.90%--_raw_spin_unlock
+                          |                                                                                                                        |                     __raw_callee_save___pv_queued_spin_unlock
+                          |                                                                                                                        |          
+                          |                                                                                                                        |--1.96%--__get_user_nocheck_4
+                          |                                                                                                                        |          
+                          |                                                                                                                         --1.66%--futex_q_lock
+                          |          
+                          |--0.59%--pthread_mutex_lock@plt
+                          |          
+                           --0.51%--pthread_mutex_unlock@plt
+
+    99.88%     0.00%  lab00_clean  libc.so.6             [.] start_thread
+            |
+            ---start_thread
+               |          
+                --99.84%--0x72b850cecdb3
+                          increase_global_value()
+                          |          
+                          |--48.98%--___pthread_mutex_unlock (inlined)
+                          |          |          
+                          |           --48.04%--__GI___pthread_mutex_unlock_usercnt (inlined)
+                          |                     |          
+                          |                      --46.03%--lll_mutex_unlock_optimized (inlined)
+                          |                                |          
+                          |                                 --28.76%--__GI___lll_lock_wake
+                          |                                           |          
+                          |                                            --14.46%--entry_SYSCALL_64_after_hwframe
+                          |                                                      |          
+                          |                                                       --14.44%--do_syscall_64
+                          |                                                                 |          
+                          |                                                                  --8.88%--x64_sys_call
+                          |                                                                            |          
+                          |                                                                             --8.86%--__x64_sys_futex
+                          |                                                                                       |          
+                          |                                                                                        --8.63%--do_futex
+                          |                                                                                                  |          
+                          |                                                                                                  |--6.69%--futex_wake
+                          |                                                                                                  |          |          
+                          |                                                                                                  |           --3.09%--_raw_spin_lock
+                          |                                                                                                  |                     |          
+                          |                                                                                                  |                      --3.07%--__pv_queued_spin_lock_slowpath
+                          |                                                                                                  |          
+                          |                                                                                                   --1.56%--_raw_spin_lock
+                          |          
+                          |--47.36%--___pthread_mutex_lock (inlined)
+                          |          |          
+                          |           --39.59%--lll_mutex_lock_optimized (inlined)
+                          |                     |          
+                          |                      --21.56%--__GI___lll_lock_wait
+                          |                                |          
+                          |                                 --19.29%--futex_wait (inlined)
+                          |                                           |          
+                          |                                            --10.94%--entry_SYSCALL_64_after_hwframe
+                          |                                                      do_syscall_64
+                          |                                                      |          
+                          |                                                       --7.92%--x64_sys_call
+                          |                                                                 |          
+                          |                                                                  --7.73%--__x64_sys_futex
+                          |                                                                            |          
+                          |                                                                             --7.63%--do_futex
+                          |                                                                                       |          
+                          |                                                                                        --7.53%--futex_wait
+                          |                                                                                                  |          
+                          |                                                                                                   --7.30%--__futex_wait
+                          |                                                                                                             |          
+                          |                                                                                                              --6.65%--futex_wait_setup
+                          |                                                                                                                        |          
+                          |                                                                                                                        |--2.29%--futex_q_unlock
+                          |                                                                                                                        |          |          
+                          |                                                                                                                        |           --1.90%--_raw_spin_unlock
+                          |                                                                                                                        |                     __raw_callee_save___pv_queued_spin_unlock
+                          |                                                                                                                        |          
+                          |                                                                                                                        |--1.96%--__get_user_nocheck_4
+                          |                                                                                                                        |          
+                          |                                                                                                                         --1.66%--futex_q_lock
+                          |          
+                          |--0.59%--pthread_mutex_lock@plt
+                          |          
+                           --0.51%--pthread_mutex_unlock@plt
+
+    99.84%     0.00%  lab00_clean  libstdc++.so.6.0.33   [.] 0x000072b850cecdb3
+            |
+            ---0x72b850cecdb3
+               increase_global_value()
+               |          
+               |--48.98%--___pthread_mutex_unlock (inlined)
+               |          |          
+               |           --48.04%--__GI___pthread_mutex_unlock_usercnt (inlined)
+               |                     |          
+               |                      --46.03%--lll_mutex_unlock_optimized (inlined)
+               |                                |          
+               |                                 --28.76%--__GI___lll_lock_wake
+               |                                           |          
+               |                                            --14.46%--entry_SYSCALL_64_after_hwframe
+               |                                                      |          
+               |                                                       --14.44%--do_syscall_64
+               |                                                                 |          
+               |                                                                  --8.88%--x64_sys_call
+               |                                                                            |          
+               |                                                                             --8.86%--__x64_sys_futex
+               |                                                                                       |          
+               |                                                                                        --8.63%--do_futex
+               |                                                                                                  |          
+               |                                                                                                  |--6.69%--futex_wake
+               |                                                                                                  |          |          
+               |                                                                                                  |           --3.09%--_raw_spin_lock
+               |                                                                                                  |                     |          
+               |                                                                                                  |                      --3.07%--__pv_queued_spin_lock_slowpath
+               |                                                                                                  |          
+               |                                                                                                   --1.56%--_raw_spin_lock
+               |          
+               |--47.36%--___pthread_mutex_lock (inlined)
+               |          |          
+               |           --39.59%--lll_mutex_lock_optimized (inlined)
+               |                     |          
+               |                      --21.56%--__GI___lll_lock_wait
+               |                                |          
+               |                                 --19.29%--futex_wait (inlined)
+               |                                           |          
+               |                                            --10.94%--entry_SYSCALL_64_after_hwframe
+               |                                                      do_syscall_64
+               |                                                      |          
+               |                                                       --7.92%--x64_sys_call
+               |                                                                 |          
+               |                                                                  --7.73%--__x64_sys_futex
+               |                                                                            |          
+               |                                                                             --7.63%--do_futex
+               |                                                                                       |          
+               |                                                                                        --7.53%--futex_wait
+               |                                                                                                  |          
+               |                                                                                                   --7.30%--__futex_wait
+               |                                                                                                             |          
+               |                                                                                                              --6.65%--futex_wait_setup
+               |                                                                                                                        |          
+               |                                                                                                                        |--2.29%--futex_q_unlock
+               |                                                                                                                        |          |          
+               |                                                                                                                        |           --1.90%--_raw_spin_unlock
+               |                                                                                                                        |                     __raw_callee_save___pv_queued_spin_unlock
+               |                                                                                                                        |          
+               |                                                                                                                        |--1.96%--__get_user_nocheck_4
+               |                                                                                                                        |          
+               |                                                                                                                         --1.66%--futex_q_lock
+               |          
+               |--0.59%--pthread_mutex_lock@plt
+               |          
+                --0.51%--pthread_mutex_unlock@plt
+
+    99.84%     2.37%  lab00_clean  lab00_clean           [.] increase_global_value()
+            |          
+            |--97.48%--increase_global_value()
+            |          |          
+            |          |--48.98%--___pthread_mutex_unlock (inlined)
+            |          |          |          
+            |          |           --48.04%--__GI___pthread_mutex_unlock_usercnt (inlined)
+            |          |                     |          
+            |          |                      --46.03%--lll_mutex_unlock_optimized (inlined)
+            |          |                                |          
+            |          |                                 --28.76%--__GI___lll_lock_wake
+            |          |                                           |          
+            |          |                                            --14.46%--entry_SYSCALL_64_after_hwframe
+            |          |                                                      |          
+            |          |                                                       --14.44%--do_syscall_64
+            |          |                                                                 |          
+            |          |                                                                  --8.88%--x64_sys_call
+            |          |                                                                            |          
+            |          |                                                                             --8.86%--__x64_sys_futex
+            |          |                                                                                       |          
+            |          |                                                                                        --8.63%--do_futex
+            |          |                                                                                                  |          
+            |          |                                                                                                  |--6.69%--futex_wake
+            |          |                                                                                                  |          |          
+            |          |                                                                                                  |           --3.09%--_raw_spin_lock
+            |          |                                                                                                  |                     |          
+            |          |                                                                                                  |                      --3.07%--__pv_queued_spin_lock_slowpath
+            |          |                                                                                                  |          
+            |          |                                                                                                   --1.56%--_raw_spin_lock
+            |          |          
+            |          |--47.36%--___pthread_mutex_lock (inlined)
+            |          |          |          
+            |          |           --39.59%--lll_mutex_lock_optimized (inlined)
+            |          |                     |          
+            |          |                      --21.56%--__GI___lll_lock_wait
+            |          |                                |          
+            |          |                                 --19.29%--futex_wait (inlined)
+            |          |                                           |          
+            |          |                                            --10.94%--entry_SYSCALL_64_after_hwframe
+            |          |                                                      do_syscall_64
+            |          |                                                      |          
+            |          |                                                       --7.92%--x64_sys_call
+            |          |                                                                 |          
+            |          |                                                                  --7.73%--__x64_sys_futex
+            |          |                                                                            |          
+            |          |                                                                             --7.63%--do_futex
+            |          |                                                                                       |          
+            |          |                                                                                        --7.53%--futex_wait
+            |          |                                                                                                  |          
+            |          |                                                                                                   --7.30%--__futex_wait
+            |          |                                                                                                             |          
+            |          |                                                                                                              --6.65%--futex_wait_setup
+            |          |                                                                                                                        |          
+            |          |                                                                                                                        |--2.29%--futex_q_unlock
+            |          |                                                                                                                        |          |          
+            |          |                                                                                                                        |           --1.90%--_raw_spin_unlock
+            |          |                                                                                                                        |                     __raw_callee_save___pv_queued_spin_unlock
+            |          |                                                                                                                        |          
+            |          |                                                                                                                        |--1.96%--__get_user_nocheck_4
+            |          |                                                                                                                        |          
+            |          |                                                                                                                         --1.66%--futex_q_lock
+            |          |          
+            |          |--0.59%--pthread_mutex_lock@plt
+            |          |          
+            |           --0.51%--pthread_mutex_unlock@plt
+            |          
+             --2.37%--clone3
+                       start_thread
+                       0x72b850cecdb3
+                       increase_global_value()
+
+    48.98%     0.00%  lab00_clean  libc.so.6             [.] ___pthread_mutex_unlock (inlined)
+            |
+            ---___pthread_mutex_unlock (inlined)
+               |          
+                --48.04%--__GI___pthread_mutex_unlock_usercnt (inlined)
+                          |          
+                           --46.03%--lll_mutex_unlock_optimized (inlined)
+                                     |          
+                                      --28.76%--__GI___lll_lock_wake
+                                                |          
+                                                 --14.46%--entry_SYSCALL_64_after_hwframe
+                                                           |          
+                                                            --14.44%--do_syscall_64
+                                                                      |          
+                                                                       --8.88%--x64_sys_call
+                                                                                 |          
+                                                                                  --8.86%--__x64_sys_futex
+                                                                                            |          
+                                                                                             --8.63%--do_futex
+                                                                                                       |          
+                                                                                                       |--6.69%--futex_wake
+                                                                                                       |          |          
+                                                                                                       |           --3.09%--_raw_spin_lock
+                                                                                                       |                     |          
+                                                                                                       |                      --3.07%--__pv_queued_spin_lock_slowpath
+                                                                                                       |          
+                                                                                                        --1.56%--_raw_spin_lock
+
+    48.04%     0.00%  lab00_clean  libc.so.6             [.] __GI___pthread_mutex_unlock_usercnt (inlined)
+            |
+            ---__GI___pthread_mutex_unlock_usercnt (inlined)
+               |          
+                --46.03%--lll_mutex_unlock_optimized (inlined)
+                          |          
+                           --28.76%--__GI___lll_lock_wake
+                                     |          
+                                      --14.46%--entry_SYSCALL_64_after_hwframe
+                                                |          
+                                                 --14.44%--do_syscall_64
+                                                           |          
+                                                            --8.88%--x64_sys_call
+                                                                      |          
+                                                                       --8.86%--__x64_sys_futex
+                                                                                 |          
+                                                                                  --8.63%--do_futex
+                                                                                            |          
+                                                                                            |--6.69%--futex_wake
+                                                                                            |          |          
+                                                                                            |           --3.09%--_raw_spin_lock
+                                                                                            |                     |          
+                                                                                            |                      --3.07%--__pv_queued_spin_lock_slowpath
+                                                                                            |          
+                                                                                             --1.56%--_raw_spin_lock
+
+    47.36%     0.00%  lab00_clean  libc.so.6             [.] ___pthread_mutex_lock (inlined)
+            |
+            ---___pthread_mutex_lock (inlined)
+               |          
+                --39.59%--lll_mutex_lock_optimized (inlined)
+                          |          
+                           --21.56%--__GI___lll_lock_wait
+                                     |          
+                                      --19.29%--futex_wait (inlined)
+                                                |          
+                                                 --10.94%--entry_SYSCALL_64_after_hwframe
+                                                           do_syscall_64
+                                                           |          
+                                                            --7.92%--x64_sys_call
+                                                                      |          
+                                                                       --7.73%--__x64_sys_futex
+                                                                                 |          
+                                                                                  --7.63%--do_futex
+                                                                                            |          
+                                                                                             --7.53%--futex_wait
+                                                                                                       |          
+                                                                                                        --7.30%--__futex_wait
+                                                                                                                  |          
+                                                                                                                   --6.65%--futex_wait_setup
+                                                                                                                             |          
+                                                                                                                             |--2.29%--futex_q_unlock
+                                                                                                                             |          |          
+                                                                                                                             |           --1.90%--_raw_spin_unlock
+                                                                                                                             |                     __raw_callee_save___pv_queued_spin_unlock
+                                                                                                                             |          
+                                                                                                                             |--1.96%--__get_user_nocheck_4
+                                                                                                                             |          
+                                                                                                                              --1.66%--futex_q_lock
+
+    46.03%     0.00%  lab00_clean  libc.so.6             [.] lll_mutex_unlock_optimized (inlined)
+            |
+            ---lll_mutex_unlock_optimized (inlined)
+               |          
+                --28.76%--__GI___lll_lock_wake
+                          |          
+                           --14.46%--entry_SYSCALL_64_after_hwframe
+                                     |          
+                                      --14.44%--do_syscall_64
+                                                |          
+                                                 --8.88%--x64_sys_call
+                                                           |          
+                                                            --8.86%--__x64_sys_futex
+                                                                      |          
+                                                                       --8.63%--do_futex
+                                                                                 |          
+                                                                                 |--6.69%--futex_wake
+                                                                                 |          |          
+                                                                                 |           --3.09%--_raw_spin_lock
+                                                                                 |                     |          
+                                                                                 |                      --3.07%--__pv_queued_spin_lock_slowpath
+                                                                                 |          
+                                                                                  --1.56%--_raw_spin_lock
+
+    39.59%     0.00%  lab00_clean  libc.so.6             [.] lll_mutex_lock_optimized (inlined)
+            |
+            ---lll_mutex_lock_optimized (inlined)
+               |          
+                --21.56%--__GI___lll_lock_wait
+                          |          
+                           --19.29%--futex_wait (inlined)
+                                     |          
+                                      --10.94%--entry_SYSCALL_64_after_hwframe
+                                                do_syscall_64
+                                                |          
+                                                 --7.92%--x64_sys_call
+                                                           |          
+                                                            --7.73%--__x64_sys_futex
+                                                                      |          
+                                                                       --7.63%--do_futex
+                                                                                 |          
+                                                                                  --7.53%--futex_wait
+                                                                                            |          
+                                                                                             --7.30%--__futex_wait
+                                                                                                       |          
+                                                                                                        --6.65%--futex_wait_setup
+                                                                                                                  |          
+                                                                                                                  |--2.29%--futex_q_unlock
+                                                                                                                  |          |          
+                                                                                                                  |           --1.90%--_raw_spin_unlock
+                                                                                                                  |                     __raw_callee_save___pv_queued_spin_unlock
+                                                                                                                  |          
+                                                                                                                  |--1.96%--__get_user_nocheck_4
+                                                                                                                  |          
+                                                                                                                   --1.66%--futex_q_lock
+
+    28.76%    14.30%  lab00_clean  libc.so.6             [.] __GI___lll_lock_wake
+            |          
+            |--14.46%--__GI___lll_lock_wake
+            |          entry_SYSCALL_64_after_hwframe
+            |          |          
+            |           --14.44%--do_syscall_64
+            |                     |          
+            |                      --8.88%--x64_sys_call
+            |                                |          
+            |                                 --8.86%--__x64_sys_futex
+            |                                           |          
+            |                                            --8.63%--do_futex
+            |                                                      |          
+            |                                                      |--6.69%--futex_wake
+            |                                                      |          |          
+            |                                                      |           --3.09%--_raw_spin_lock
+            |                                                      |                     |          
+            |                                                      |                      --3.07%--__pv_queued_spin_lock_slowpath
+            |                                                      |          
+            |                                                       --1.56%--_raw_spin_lock
+            |          
+             --14.30%--clone3
+                       start_thread
+                       0x72b850cecdb3
+                       increase_global_value()
+                       ___pthread_mutex_unlock (inlined)
+                       __GI___pthread_mutex_unlock_usercnt (inlined)
+                       lll_mutex_unlock_optimized (inlined)
+                       __GI___lll_lock_wake
+
+    25.47%     0.00%  lab00_clean  [kernel.kallsyms]     [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               |          
+                --25.45%--do_syscall_64
+                          |          
+                           --16.88%--x64_sys_call
+                                     |          
+                                      --16.59%--__x64_sys_futex
+                                                |          
+                                                 --16.26%--do_futex
+                                                           |          
+                                                           |--7.53%--futex_wait
+                                                           |          |          
+                                                           |           --7.30%--__futex_wait
+                                                           |                     |          
+                                                           |                      --6.65%--futex_wait_setup
+                                                           |                                |          
+                                                           |                                |--2.29%--futex_q_unlock
+                                                           |                                |          |          
+                                                           |                                |           --1.90%--_raw_spin_unlock
+                                                           |                                |                     __raw_callee_save___pv_queued_spin_unlock
+                                                           |                                |          
+                                                           |                                |--1.96%--__get_user_nocheck_4
+                                                           |                                |          
+                                                           |                                 --1.66%--futex_q_lock
+                                                           |          
+                                                           |--6.69%--futex_wake
+                                                           |          |          
+                                                           |           --3.09%--_raw_spin_lock
+                                                           |                     |          
+                                                           |                      --3.07%--__pv_queued_spin_lock_slowpath
+                                                           |          
+                                                            --1.56%--_raw_spin_lock
+
+    25.45%     8.29%  lab00_clean  [kernel.kallsyms]     [k] do_syscall_64
+            |          
+            |--17.16%--do_syscall_64
+            |          |          
+            |           --16.88%--x64_sys_call
+            |                     |          
+            |                      --16.59%--__x64_sys_futex
+            |                                |          
+            |                                 --16.26%--do_futex
+            |                                           |          
+            |                                           |--7.53%--futex_wait
+            |                                           |          |          
+            |                                           |           --7.30%--__futex_wait
+            |                                           |                     |          
+            |                                           |                      --6.65%--futex_wait_setup
+            |                                           |                                |          
+            |                                           |                                |--2.29%--futex_q_unlock
+            |                                           |                                |          |          
+            |                                           |                                |           --1.90%--_raw_spin_unlock
+            |                                           |                                |                     __raw_callee_save___pv_queued_spin_unlock
+            |                                           |                                |          
+            |                                           |                                |--1.96%--__get_user_nocheck_4
+            |                                           |                                |          
+            |                                           |                                 --1.66%--futex_q_lock
+            |                                           |          
+            |                                           |--6.69%--futex_wake
+            |                                           |          |          
+            |                                           |           --3.09%--_raw_spin_lock
+            |                                           |                     |          
+            |                                           |                      --3.07%--__pv_queued_spin_lock_slowpath
+            |                                           |          
+            |                                            --1.56%--_raw_spin_lock
+            |          
+             --8.29%--clone3
+                       start_thread
+                       0x72b850cecdb3
+                       increase_global_value()
+                       |          
+                       |--5.36%--___pthread_mutex_unlock (inlined)
+                       |          __GI___pthread_mutex_unlock_usercnt (inlined)
+                       |          lll_mutex_unlock_optimized (inlined)
+                       |          __GI___lll_lock_wake
+                       |          entry_SYSCALL_64_after_hwframe
+                       |          do_syscall_64
+                       |          
+                        --2.93%--___pthread_mutex_lock (inlined)
+                                  lll_mutex_lock_optimized (inlined)
+                                  __GI___lll_lock_wait
+                                  futex_wait (inlined)
+                                  entry_SYSCALL_64_after_hwframe
+                                  do_syscall_64
+
+    25.31%    25.31%  lab00_clean  libc.so.6             [.] pthread_mutex_lock@@GLIBC_2.2.5
+            |
+            ---clone3
+               start_thread
+               0x72b850cecdb3
+               increase_global_value()
+               ___pthread_mutex_lock (inlined)
+               |          
+                --17.63%--lll_mutex_lock_optimized (inlined)
+
+    21.56%    10.58%  lab00_clean  libc.so.6             [.] __GI___lll_lock_wait
+            |          
+            |--10.97%--__GI___lll_lock_wait
+            |          |          
+            |           --10.95%--futex_wait (inlined)
+            |                     |          
+            |                      --10.94%--entry_SYSCALL_64_after_hwframe
+            |                                do_syscall_64
+            |                                |          
+            |                                 --7.92%--x64_sys_call
+            |                                           |          
+            |                                            --7.73%--__x64_sys_futex
+            |                                                      |          
+            |                                                       --7.63%--do_futex
+            |                                                                 |          
+            |                                                                  --7.53%--futex_wait
+            |                                                                            |          
+            |                                                                             --7.30%--__futex_wait
+            |                                                                                       |          
+            |                                                                                        --6.65%--futex_wait_setup
+            |                                                                                                  |          
+            |                                                                                                  |--2.29%--futex_q_unlock
+            |                                                                                                  |          |          
+            |                                                                                                  |           --1.90%--_raw_spin_unlock
+            |                                                                                                  |                     __raw_callee_save___pv_queued_spin_unlock
+            |                                                                                                  |          
+            |                                                                                                  |--1.96%--__get_user_nocheck_4
+            |                                                                                                  |          
+            |                                                                                                   --1.66%--futex_q_lock
+            |          
+             --10.58%--clone3
+                       start_thread
+                       0x72b850cecdb3
+                       increase_global_value()
+                       ___pthread_mutex_lock (inlined)
+                       lll_mutex_lock_optimized (inlined)
+                       __GI___lll_lock_wait
+                       |          
+                        --8.33%--futex_wait (inlined)
+
+    20.03%    20.03%  lab00_clean  libc.so.6             [.] pthread_mutex_unlock@@GLIBC_2.2.5
+            |
+            ---clone3
+               start_thread
+               0x72b850cecdb3
+               increase_global_value()
+               ___pthread_mutex_unlock (inlined)
+               |          
+                --19.13%--__GI___pthread_mutex_unlock_usercnt (inlined)
+                          |          
+                           --17.16%--lll_mutex_unlock_optimized (inlined)
+
+    19.29%     0.00%  lab00_clean  libc.so.6             [.] futex_wait (inlined)
+            |
+            ---futex_wait (inlined)
+               |          
+                --10.94%--entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          |          
+                           --7.92%--x64_sys_call
+                                     |          
+                                      --7.73%--__x64_sys_futex
+                                                |          
+                                                 --7.63%--do_futex
+                                                           |          
+                                                            --7.53%--futex_wait
+                                                                      |          
+                                                                       --7.30%--__futex_wait
+                                                                                 |          
+                                                                                  --6.65%--futex_wait_setup
+                                                                                            |          
+                                                                                            |--2.29%--futex_q_unlock
+                                                                                            |          |          
+                                                                                            |           --1.90%--_raw_spin_unlock
+                                                                                            |                     __raw_callee_save___pv_queued_spin_unlock
+                                                                                            |          
+                                                                                            |--1.96%--__get_user_nocheck_4
+                                                                                            |          
+                                                                                             --1.66%--futex_q_lock
+
+    16.88%     0.10%  lab00_clean  [kernel.kallsyms]     [k] x64_sys_call
+            |          
+             --16.78%--x64_sys_call
+                       |          
+                        --16.59%--__x64_sys_futex
+                                  |          
+                                   --16.26%--do_futex
+                                             |          
+                                             |--7.53%--futex_wait
+                                             |          |          
+                                             |           --7.30%--__futex_wait
+                                             |                     |          
+                                             |                      --6.65%--futex_wait_setup
+                                             |                                |          
+                                             |                                |--2.29%--futex_q_unlock
+                                             |                                |          |          
+                                             |                                |           --1.90%--_raw_spin_unlock
+                                             |                                |                     __raw_callee_save___pv_queued_spin_unlock
+                                             |                                |          
+                                             |                                |--1.96%--__get_user_nocheck_4
+                                             |                                |          
+                                             |                                 --1.66%--futex_q_lock
+                                             |          
+                                             |--6.69%--futex_wake
+                                             |          |          
+                                             |           --3.09%--_raw_spin_lock
+                                             |                     |          
+                                             |                      --3.07%--__pv_queued_spin_lock_slowpath
+                                             |          
+                                              --1.56%--_raw_spin_lock
+
+    16.67%     0.39%  lab00_clean  [kernel.kallsyms]     [k] __x64_sys_futex
+            |          
+             --16.28%--__x64_sys_futex
+                       |          
+                        --16.26%--do_futex
+                                  |          
+                                  |--7.53%--futex_wait
+                                  |          |          
+                                  |           --7.30%--__futex_wait
+                                  |                     |          
+                                  |                      --6.65%--futex_wait_setup
+                                  |                                |          
+                                  |                                |--2.29%--futex_q_unlock
+                                  |                                |          |          
+                                  |                                |           --1.90%--_raw_spin_unlock
+                                  |                                |                     __raw_callee_save___pv_queued_spin_unlock
+                                  |                                |          
+                                  |                                |--1.96%--__get_user_nocheck_4
+                                  |                                |          
+                                  |                                 --1.66%--futex_q_lock
+                                  |          
+                                  |--6.69%--futex_wake
+                                  |          |          
+                                  |           --3.09%--_raw_spin_lock
+                                  |                     |          
+                                  |                      --3.07%--__pv_queued_spin_lock_slowpath
+                                  |          
+                                   --1.56%--_raw_spin_lock
+
+    16.37%     0.23%  lab00_clean  [kernel.kallsyms]     [k] do_futex
+            |          
+             --16.14%--do_futex
+                       |          
+                       |--7.53%--futex_wait
+                       |          |          
+                       |           --7.30%--__futex_wait
+                       |                     |          
+                       |                      --6.65%--futex_wait_setup
+                       |                                |          
+                       |                                |--2.29%--futex_q_unlock
+                       |                                |          |          
+                       |                                |           --1.90%--_raw_spin_unlock
+                       |                                |                     __raw_callee_save___pv_queued_spin_unlock
+                       |                                |          
+                       |                                |--1.96%--__get_user_nocheck_4
+                       |                                |          
+                       |                                 --1.66%--futex_q_lock
+                       |          
+                       |--6.69%--futex_wake
+                       |          |          
+                       |           --3.09%--_raw_spin_lock
+                       |                     |          
+                       |                      --3.07%--__pv_queued_spin_lock_slowpath
+                       |          
+                        --1.56%--_raw_spin_lock
+
+     7.53%     0.20%  lab00_clean  [kernel.kallsyms]     [k] futex_wait
+            |          
+             --7.34%--futex_wait
+                       |          
+                        --7.30%--__futex_wait
+                                  |          
+                                   --6.65%--futex_wait_setup
+                                             |          
+                                             |--2.29%--futex_q_unlock
+                                             |          |          
+                                             |           --1.90%--_raw_spin_unlock
+                                             |                     __raw_callee_save___pv_queued_spin_unlock
+                                             |          
+                                             |--1.96%--__get_user_nocheck_4
+                                             |          
+                                              --1.66%--futex_q_lock
+
+     7.30%     0.31%  lab00_clean  [kernel.kallsyms]     [k] __futex_wait
+            |          
+             --6.98%--__futex_wait
+                       |          
+                        --6.65%--futex_wait_setup
+                                  |          
+                                  |--2.29%--futex_q_unlock
+                                  |          |          
+                                  |           --1.90%--_raw_spin_unlock
+                                  |                     __raw_callee_save___pv_queued_spin_unlock
+                                  |          
+                                  |--1.96%--__get_user_nocheck_4
+                                  |          
+                                   --1.66%--futex_q_lock
+
+     6.71%     2.95%  lab00_clean  [kernel.kallsyms]     [k] futex_wake
+            |          
+            |--3.76%--futex_wake
+            |          |          
+            |           --3.09%--_raw_spin_lock
+            |                     |          
+            |                      --3.07%--__pv_queued_spin_lock_slowpath
+            |          
+             --2.95%--clone3
+                       start_thread
+                       0x72b850cecdb3
+                       increase_global_value()
+                       ___pthread_mutex_unlock (inlined)
+                       __GI___pthread_mutex_unlock_usercnt (inlined)
+                       lll_mutex_unlock_optimized (inlined)
+                       __GI___lll_lock_wake
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       x64_sys_call
+                       __x64_sys_futex
+                       |          
+                        --2.93%--do_futex
+                                  futex_wake
+
+     6.67%     0.16%  lab00_clean  [kernel.kallsyms]     [k] futex_wait_setup
+            |          
+             --6.51%--futex_wait_setup
+                       |          
+                       |--2.29%--futex_q_unlock
+                       |          |          
+                       |           --1.90%--_raw_spin_unlock
+                       |                     __raw_callee_save___pv_queued_spin_unlock
+                       |          
+                       |--1.96%--__get_user_nocheck_4
+                       |          
+                        --1.66%--futex_q_lock
+
+     4.77%     1.70%  lab00_clean  [kernel.kallsyms]     [k] _raw_spin_lock
+            |          
+            |--3.07%--_raw_spin_lock
+            |          __pv_queued_spin_lock_slowpath
+            |          
+             --1.70%--clone3
+                       start_thread
+                       0x72b850cecdb3
+                       increase_global_value()
+                       |          
+                        --1.58%--___pthread_mutex_unlock (inlined)
+                                  __GI___pthread_mutex_unlock_usercnt (inlined)
+                                  lll_mutex_unlock_optimized (inlined)
+                                  __GI___lll_lock_wake
+                                  entry_SYSCALL_64_after_hwframe
+                                  do_syscall_64
+                                  x64_sys_call
+                                  __x64_sys_futex
+                                  do_futex
+                                  |          
+                                   --1.56%--_raw_spin_lock
+
+     3.07%     3.07%  lab00_clean  [kernel.kallsyms]     [k] __pv_queued_spin_lock_slowpath
+            |
+            ---clone3
+               start_thread
+               0x72b850cecdb3
+               increase_global_value()
+               ___pthread_mutex_unlock (inlined)
+               __GI___pthread_mutex_unlock_usercnt (inlined)
+               lll_mutex_unlock_optimized (inlined)
+               __GI___lll_lock_wake
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_futex
+               do_futex
+               futex_wake
+               _raw_spin_lock
+               __pv_queued_spin_lock_slowpath
+
+     2.31%     0.37%  lab00_clean  [kernel.kallsyms]     [k] futex_q_unlock
+            |          
+             --1.94%--futex_q_unlock
+                       |          
+                        --1.90%--_raw_spin_unlock
+                                  __raw_callee_save___pv_queued_spin_unlock
+
+     2.21%     2.21%  lab00_clean  [kernel.kallsyms]     [k] __raw_callee_save___pv_queued_spin_unlock
+            |
+            ---clone3
+               start_thread
+               0x72b850cecdb3
+               increase_global_value()
+               |          
+                --1.94%--___pthread_mutex_lock (inlined)
+                          lll_mutex_lock_optimized (inlined)
+                          __GI___lll_lock_wait
+                          futex_wait (inlined)
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          x64_sys_call
+                          __x64_sys_futex
+                          do_futex
+                          futex_wait
+                          __futex_wait
+                          futex_wait_setup
+                          futex_q_unlock
+                          |          
+                           --1.90%--_raw_spin_unlock
+                                     __raw_callee_save___pv_queued_spin_unlock
+
+     2.17%     0.06%  lab00_clean  [kernel.kallsyms]     [k] _raw_spin_unlock
+            |          
+             --2.11%--_raw_spin_unlock
+                       __raw_callee_save___pv_queued_spin_unlock
+
+     1.96%     1.96%  lab00_clean  [kernel.kallsyms]     [k] __get_user_nocheck_4
+            |
+            ---clone3
+               start_thread
+               0x72b850cecdb3
+               increase_global_value()
+               ___pthread_mutex_lock (inlined)
+               lll_mutex_lock_optimized (inlined)
+               __GI___lll_lock_wait
+               futex_wait (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_futex
+               do_futex
+               futex_wait
+               __futex_wait
+               futex_wait_setup
+               __get_user_nocheck_4
+
+     1.68%     1.66%  lab00_clean  [kernel.kallsyms]     [k] futex_q_lock
+            |          
+             --1.66%--clone3
+                       start_thread
+                       0x72b850cecdb3
+                       increase_global_value()
+                       ___pthread_mutex_lock (inlined)
+                       lll_mutex_lock_optimized (inlined)
+                       __GI___lll_lock_wait
+                       futex_wait (inlined)
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       x64_sys_call
+                       __x64_sys_futex
+                       do_futex
+                       futex_wait
+                       __futex_wait
+                       |          
+                        --1.64%--futex_wait_setup
+                                  futex_q_lock
+
+     0.68%     0.35%  lab00_clean  [kernel.kallsyms]     [k] irqentry_exit_to_user_mode
+     0.68%     0.00%  lab00_clean  [kernel.kallsyms]     [k] irqentry_exit
+            |
+            ---irqentry_exit
+               irqentry_exit_to_user_mode
+
+     0.63%     0.00%  lab00_clean  [kernel.kallsyms]     [k] asm_sysvec_reschedule_ipi
+            |
+            ---asm_sysvec_reschedule_ipi
+               sysvec_reschedule_ipi
+               irqentry_exit
+               irqentry_exit_to_user_mode
+
+     0.63%     0.00%  lab00_clean  [kernel.kallsyms]     [k] sysvec_reschedule_ipi
+            |
+            ---sysvec_reschedule_ipi
+               irqentry_exit
+               irqentry_exit_to_user_mode
+
+     0.59%     0.59%  lab00_clean  lab00_clean           [.] pthread_mutex_lock@plt
+            |
+            ---clone3
+               start_thread
+               0x72b850cecdb3
+               increase_global_value()
+               pthread_mutex_lock@plt
+
+     0.57%     0.02%  lab00_clean  [kernel.kallsyms]     [k] __schedule
+            |          
+             --0.55%--__schedule
+                       |          
+                        --0.53%--finish_task_switch.isra.0
+
+     0.57%     0.00%  lab00_clean  [kernel.kallsyms]     [k] schedule
+            |
+            ---schedule
+               __schedule
+               |          
+                --0.53%--finish_task_switch.isra.0
+
+     0.53%     0.53%  lab00_clean  [kernel.kallsyms]     [k] finish_task_switch.isra.0
+            |
+            ---clone3
+               start_thread
+               0x72b850cecdb3
+               increase_global_value()
+
+     0.51%     0.51%  lab00_clean  [kernel.kallsyms]     [k] futex_hash
+            |
+            ---clone3
+               start_thread
+               0x72b850cecdb3
+               increase_global_value()
+
+     0.51%     0.51%  lab00_clean  lab00_clean           [.] pthread_mutex_unlock@plt
+            |
+            ---clone3
+               start_thread
+               0x72b850cecdb3
+               increase_global_value()
+               pthread_mutex_unlock@plt
+
+     0.31%     0.31%  lab00_clean  [kernel.kallsyms]     [k] get_futex_key
+     0.25%     0.02%  lab00_clean  [kernel.kallsyms]     [k] futex_wait_queue
+     0.23%     0.10%  lab00_clean  [kernel.kallsyms]     [k] wake_up_q
+     0.16%     0.16%  lab00_clean  [kernel.kallsyms]     [k] _raw_spin_unlock_irqrestore
+     0.16%     0.06%  lab00_clean  [kernel.kallsyms]     [k] syscall_exit_to_user_mode
+     0.14%     0.14%  lab00_clean  [kernel.kallsyms]     [k] syscall_exit_to_user_mode_prepare
+     0.14%     0.00%  lab00_clean  [kernel.kallsyms]     [k] try_to_wake_up
+     0.12%     0.12%  lab00_clean  [kernel.kallsyms]     [k] futex_get_value_locked
+     0.10%     0.00%  lab00_clean  [kernel.kallsyms]     [k] irq_exit_rcu
+     0.10%     0.00%  lab00_clean  [kernel.kallsyms]     [k] __irq_exit_rcu
+     0.10%     0.04%  lab00_clean  [kernel.kallsyms]     [k] handle_softirqs
+     0.08%     0.00%  lab00_clean  [kernel.kallsyms]     [k] asm_common_interrupt
+     0.08%     0.00%  lab00_clean  [kernel.kallsyms]     [k] common_interrupt
+     0.08%     0.00%  lab00_clean  [kernel.kallsyms]     [k] asm_sysvec_apic_timer_interrupt
+     0.08%     0.00%  lab00_clean  [kernel.kallsyms]     [k] sysvec_apic_timer_interrupt
+     0.08%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _start
+     0.08%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_start
+     0.08%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_sysdep_start
+     0.08%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] dl_main
+     0.08%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_start_final (inlined)
+     0.06%     0.00%  lab00_clean  [kernel.kallsyms]     [k] net_rx_action
+     0.06%     0.00%  lab00_clean  [kernel.kallsyms]     [k] __napi_poll
+     0.06%     0.00%  lab00_clean  [kernel.kallsyms]     [k] virtnet_poll
+     0.06%     0.00%  lab00_clean  [kernel.kallsyms]     [k] napi_complete_done
+     0.06%     0.00%  lab00_clean  [kernel.kallsyms]     [k] netif_receive_skb_list_internal
+     0.06%     0.00%  lab00_clean  [kernel.kallsyms]     [k] __netif_receive_skb_list_core
+     0.06%     0.00%  lab00_clean  [kernel.kallsyms]     [k] ip_list_rcv
+     0.06%     0.00%  lab00_clean  [kernel.kallsyms]     [k] ip_sublist_rcv
+     0.04%     0.04%  lab00_clean  [kernel.kallsyms]     [k] futex_setup_timer
+     0.04%     0.04%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_lookup_symbol_x
+     0.04%     0.02%  lab00_clean  [kernel.kallsyms]     [k] tcp_rcv_established
+     0.04%     0.00%  lab00_clean  [kernel.kallsyms]     [k] do_exit
+     0.04%     0.00%  lab00_clean  [kernel.kallsyms]     [k] ip_sublist_rcv_finish
+     0.04%     0.00%  lab00_clean  [kernel.kallsyms]     [k] ip_local_deliver
+     0.04%     0.00%  lab00_clean  [kernel.kallsyms]     [k] ip_local_deliver_finish
+     0.04%     0.00%  lab00_clean  [kernel.kallsyms]     [k] ip_protocol_deliver_rcu
+     0.04%     0.00%  lab00_clean  [kernel.kallsyms]     [k] tcp_v4_rcv
+     0.04%     0.00%  lab00_clean  [kernel.kallsyms]     [k] tcp_v4_do_rcv
+     0.04%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_relocate_object
+     0.04%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] elf_dynamic_do_Rela (inlined)
+     0.04%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] elf_machine_rela (inlined)
+     0.04%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] resolve_map (inlined)
+     0.04%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_new_hash (inlined)
+     0.02%     0.02%  lab00_clean  [kernel.kallsyms]     [k] __futex_queue
+     0.02%     0.02%  lab00_clean  [kernel.kallsyms]     [k] skb_free_head
+     0.02%     0.02%  lab00_clean  [kernel.kallsyms]     [k] cap_mmap_addr
+     0.02%     0.02%  lab00_clean  [kernel.kallsyms]     [k] copy_page_to_iter
+     0.02%     0.02%  lab00_clean  [kernel.kallsyms]     [k] refill_obj_stock
+     0.02%     0.02%  lab00_clean  [kernel.kallsyms]     [k] schedule_debug.isra.0
+     0.02%     0.02%  lab00_clean  [kernel.kallsyms]     [k] __rseq_handle_notify_resume
+     0.02%     0.02%  lab00_clean  [kernel.kallsyms]     [k] tcp_v4_early_demux
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] __kfree_skb
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_map_object_deps
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] __GI__dl_catch_exception (inlined)
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] __x64_sys_exit_group
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] openaux
+     0.02%     0.02%  lab00_clean  ld-linux-x86-64.so.2  [.] strcmp
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] do_group_exit
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] do_mmap
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_map_object
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] open_verify (inlined)
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] exit_mm
+     0.02%     0.02%  lab00_clean  libstdc++.so.6.0.33   [.] std::locale::_Impl::_Impl(unsigned long)
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] mmput
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] __mmput
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] __memcg_slab_free_hook
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] __x64_sys_exit
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] __x64_sys_mmap
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] __GI___read_nocancel
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_start_user
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_init
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] exit_mmap
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_receive_error
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] call_init (inlined)
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] __x64_sys_read
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] free_pgtables
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] call_init (inlined)
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] version_check_doit
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] ksys_read
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_check_all_versions
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] kmem_cache_free
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_check_map_versions
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] ext4_file_read_iter
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] find_needed (inlined)
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] generic_file_read_iter
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] ksys_mmap_pgoff
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] get_unmapped_area
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] obj_cgroup_uncharge
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] skb_release_data
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] taskstats_exit
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] tcp_ack
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] tcp_clean_rtx_queue.constprop.0
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] unlink_anon_vmas
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] vfs_read
+     0.02%     0.00%  lab00_clean  libstdc++.so.6.0.33   [.] 0x000072b850cecdbc
+     0.02%     0.00%  lab00_clean  libc.so.6             [.] __GI___libc_free (inlined)
+     0.02%     0.00%  lab00_clean  libc.so.6             [.] tcache_init (inlined)
+     0.02%     0.00%  lab00_clean  libc.so.6             [.] tcache_init (inlined)
+     0.02%     0.00%  lab00_clean  libc.so.6             [.] arena_get2 (inlined)
+     0.02%     0.00%  lab00_clean  libc.so.6             [.] arena_get2 (inlined)
+     0.02%     0.00%  lab00_clean  libc.so.6             [.] _int_new_arena (inlined)
+     0.02%     0.00%  lab00_clean  libc.so.6             [.] new_heap (inlined)
+     0.02%     0.00%  lab00_clean  libc.so.6             [.] alloc_new_heap
+     0.02%     0.00%  lab00_clean  libc.so.6             [.] __GI___mmap64 (inlined)
+     0.02%     0.00%  lab00_clean  [kernel.kallsyms]     [k] vm_mmap_pgoff
+     0.02%     0.00%  lab00_clean  libstdc++.so.6.0.33   [.] 0x000072b850cb750b
+     0.02%     0.00%  lab00_clean  libstdc++.so.6.0.33   [.] std::ios_base_library_init()
+     0.02%     0.00%  lab00_clean  libstdc++.so.6.0.33   [.] std::locale::locale()
+     0.02%     0.00%  lab00_clean  ld-linux-x86-64.so.2  [.] _dl_name_match_p
+     0.02%     0.00%  lab00_clean  libstdc++.so.6.0.33   [.] 0x000072b850ce9883
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
