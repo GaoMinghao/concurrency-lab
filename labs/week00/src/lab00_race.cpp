@@ -4,8 +4,11 @@
 
 int global_value = 0;
 
-void increase_global_value() { 
-  global_value++; }
+void increase_global_value() {
+  for (int i = 0; i < 10000000; ++i) {
+    global_value++;
+  }
+}
 
 int main() {
   std::thread t_a(increase_global_value);

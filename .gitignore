@@ -11,3 +11,4 @@
 *.dSYM/
 .vscode/
 .idea/
+.cache/
