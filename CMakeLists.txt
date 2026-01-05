@@ -34,12 +34,14 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 # ---- Core example app (placeholder) ----
 add_executable(lab00_race labs/week00/src/lab00_race.cpp)
 add_executable(lab00_clean labs/week00/src/lab00_clean.cpp)
+add_executable(lab01A labs/week01/Lab01A.cpp)
 
 # ---- Tests (placeholder; not wired to gtest by default) ----
 if (CONCURRENCY_ENABLE_TESTS)
   enable_testing()
   add_test(NAME lab00_race COMMAND lab00_race)
   add_test(NAME lab00_clean COMMAND lab00_clean)
+  add_test(NAME lab01A COMMAND lab01A)
 endif()
 
 # ---- Bench (placeholder; not wired to google benchmark by default) ----
