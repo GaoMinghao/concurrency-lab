@@ -1,24 +1,9 @@
-// Lab 01A：`thread_guard` + 异常路径反例
+// Lab 01B：`std::jthread` 重写并对比
 #include <exception>
 #include <iostream>
 #include <mutex>
 #include <string>
 #include <thread>
-
-class thread_guard {
-public:
-  explicit thread_guard(std::thread &t_) : t(t_) {}
-  ~thread_guard() {
-    if (t.joinable()) {
-      t.join();
-    }
-  }
-  thread_guard(thread_guard &other) = delete;
-  thread_guard &operator=(thread_guard &other) = delete;
-
-private:
-  std::thread &t;
-};
 
 std::mutex read_m;
 std::mutex write_m;
@@ -62,10 +47,8 @@ void copy_file(std::string src, std::string dst) {
 
 int main() {
   try {
-    std::thread t1(copy_file, "src", "dst");
-    thread_guard g1(t1);
-    std::thread t2(copy_file, "data", "fail");
-    thread_guard g2(t2);
+    std::jthread t1(copy_file, "src", "dst");
+    std::jthread t2(copy_file, "data", "fail");
   } catch (const std::exception &e) {
     std::cout << "Main caught exception: " << e.what() << std::endl;
   }
