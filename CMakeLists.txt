@@ -24,6 +24,8 @@ if (CONCURRENCY_ENABLE_TSAN)
     # Fix for TSan unexpected memory mapping error on Linux (disables PIE/ASLR for the binary)
     add_compile_options(-fno-pie)
     add_link_options(-no-pie)
+      set(CMAKE_POSITION_INDEPENDENT_CODE OFF)
+
   else()
     message(WARNING "TSan is not supported with MSVC in the same way; use clang-cl/WSL clang if needed.")
   endif()
