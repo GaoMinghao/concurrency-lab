@@ -7,7 +7,8 @@
 
 class thread_guard {
 public:
-  explicit thread_guard(std::thread &t_) : t(t_) {}
+  explicit thread_guard(std::thread &&t_) : t(std::move(t_)) {}
+
   ~thread_guard() {
     if (t.joinable()) {
       t.join();
@@ -17,7 +18,7 @@ public:
   thread_guard &operator=(thread_guard &other) = delete;
 
 private:
-  std::thread &t;
+  std::thread t;
 };
 
 std::mutex read_m;
@@ -63,9 +64,10 @@ void copy_file(std::string src, std::string dst) {
 int main() {
   try {
     std::thread t1(copy_file, "src", "dst");
-    thread_guard g1(t1);
+    thread_guard g1(std::move(t1));
     std::thread t2(copy_file, "data", "fail");
-    thread_guard g2(t2);
+    thread_guard g2(std::move(t2));
+    thread_guard g3(std::thread(copy_file, "a", "b"));
   } catch (const std::exception &e) {
     std::cout << "Main caught exception: " << e.what() << std::endl;
   }

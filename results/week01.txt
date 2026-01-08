@@ -1,3 +1,12 @@
-Week 01 Results
+Internal ctest changing into directory: /root/concurrency-lab/build/tsan
+Test project /root/concurrency-lab/build/tsan
+    Start 1: lab01A
+1/3 Test #1: lab01A ...........................   Passed    0.01 sec
+    Start 2: lab01B
+2/3 Test #2: lab01B ...........................   Passed    0.01 sec
+    Start 3: lab01C
+3/3 Test #3: lab01C ...........................   Passed    3.01 sec
 
-> Copy from templates/results_template.txt and fill in.
+100% tests passed, 0 tests failed out of 3
+
+Total Test time (real) =   3.03 sec
